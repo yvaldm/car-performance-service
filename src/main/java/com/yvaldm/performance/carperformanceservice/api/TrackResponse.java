@@ -1,5 +1,6 @@
 package com.yvaldm.performance.carperformanceservice.api;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -12,14 +13,16 @@ public class TrackResponse {
     private long id;
     private String name;
     private String description;
-    private ValueRequestResponse length;
+    private BigDecimal length;
+    private String unit;
     private List<CarRequestResponse> cars;
 
-    public TrackResponse(long id, String name, String description, ValueRequestResponse length, List<CarRequestResponse> cars) {
+    public TrackResponse(long id, String name, String description, BigDecimal length, String unit, List<CarRequestResponse> cars) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.length = length;
+        this.unit = unit;
         this.cars = cars;
     }
 
@@ -35,8 +38,12 @@ public class TrackResponse {
         return description;
     }
 
-    public ValueRequestResponse getLength() {
+    public BigDecimal getLength() {
         return length;
+    }
+
+    public String getUnit() {
+        return unit;
     }
 
     public List<CarRequestResponse> getCars() {

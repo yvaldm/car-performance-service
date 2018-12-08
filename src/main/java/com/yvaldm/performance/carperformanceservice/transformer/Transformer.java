@@ -40,11 +40,10 @@ public class Transformer {
 
     private static TrackResponse toTrackResponse(Track track) {
 
-        ValueRequestResponse requestResponse = toValueResponse(track.getLength());
         List<CarRequestResponse> cars = toCarResponses(track.getCars());
 
         TrackResponse trackResponse = new TrackResponse(
-                track.getId(), track.getName(), track.getDescription(), requestResponse, cars);
+                track.getId(), track.getName(), track.getDescription(), track.getLength().getValue(), track.getLength().getUnit(), cars);
 
         return trackResponse;
     }
