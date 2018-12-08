@@ -16,7 +16,7 @@ public class CarPerformanceConfig {
     }
 
     @Bean
-    public TrackService trackService(TracksDao tracksDao) {
-        return new TrackService(tracksDao);
+    public TrackService trackService(TracksDao tracksDao, CarsDao carsDao) {
+        return new TrackService(tracksDao, carsDao);
     }
 }

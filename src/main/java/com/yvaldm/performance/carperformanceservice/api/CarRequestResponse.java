@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class CarRequestResponse {
 
     private long id;
+    private long trackId;
     private String code;
     private Transmission transmission;
     private ArtificialIntelligence ai;
@@ -15,8 +16,9 @@ public class CarRequestResponse {
     public CarRequestResponse() {
     }
 
-    public CarRequestResponse(long id, String code, Transmission transmission, ArtificialIntelligence ai, ValueRequestResponse maxSpeed) {
+    public CarRequestResponse(long id, long trackId, String code, Transmission transmission, ArtificialIntelligence ai, ValueRequestResponse maxSpeed) {
         this.id = id;
+        this.trackId = trackId;
         this.code = code;
         this.transmission = transmission;
         this.ai = ai;
@@ -25,6 +27,10 @@ public class CarRequestResponse {
 
     public long getId() {
         return id;
+    }
+
+    public long getTrackId() {
+        return trackId;
     }
 
     public String getCode() {

@@ -1,5 +1,6 @@
 package com.yvaldm.performance.carperformanceservice.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,18 +14,13 @@ public class Track {
     private String name;
     private String description;
     private Value length;
-    private List<Car> cars;
+    private List<Car> cars = new ArrayList<>();
 
     public Track(long id, String name, String description, Value length) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.length = length;
-    }
-
-    public Track(long id, String name, String description, Value length, List<Car> cars) {
-        this(id, name, description, length);
-        this.cars = cars;
     }
 
     public long getId() {
@@ -45,5 +41,9 @@ public class Track {
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
     }
 }

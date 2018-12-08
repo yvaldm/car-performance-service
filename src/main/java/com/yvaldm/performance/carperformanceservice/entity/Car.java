@@ -6,14 +6,16 @@ import com.yvaldm.performance.carperformanceservice.api.Transmission;
 public class Car {
 
     private long id;
+    private long trackId;
     private String code;
     private Transmission transmission;
     private ArtificialIntelligence ai;
     private Value maxSpeed;
 
-    public Car(long id, String code, Transmission transmission,
+    public Car(long id, long trackId, String code, Transmission transmission,
                ArtificialIntelligence ai, Value maxSpeed) {
         this.id = id;
+        this.trackId = trackId;
         this.code = code;
         this.transmission = transmission;
         this.ai = ai;
@@ -22,6 +24,10 @@ public class Car {
 
     public long getId() {
         return id;
+    }
+
+    public long getTrackId() {
+        return trackId;
     }
 
     public String getCode() {

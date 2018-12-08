@@ -12,7 +12,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
+import static org.hamcrest.Matchers.containsInAnyOrder;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
@@ -40,5 +43,37 @@ public class TrackControllerIT {
                                              "}")
                             .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void shouldRetrieveAllTracks() throws Exception {
+
+        // arrange
+        mvc.perform(post("/tracks")
+                            .content("{ \"name\": \"track1\", " +
+                                             "  \"description\": \"descr1\", " +
+                                             "  \"length\": { " +
+                                             "   \"unit\": \"km\", " +
+                                             "   \"value\": 222.333 " +
+                                             "  }" +
+                                             "}")
+                            .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk());
+
+        mvc.perform(post("/tracks")
+                            .content("{ \"name\": \"track2\", " +
+                                             "  \"description\": \"descr2\", " +
+                                             "  \"length\": { " +
+                                             "   \"unit\": \"km\", " +
+                                             "   \"value\": 443.123 " +
+                                             "  }" +
+                                             "}")
+                            .contentType(MediaType.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk());
+
+        // act
+        mvc.perform(get("/tracks"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[*].name", containsInAnyOrder("track1", "track2")));
     }
 }

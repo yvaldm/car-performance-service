@@ -1,6 +1,6 @@
 create table track (
 
-  id serial primary key,
+  id bigserial primary key,
   name text not null,
   description text not null,
   length numeric not null,
@@ -9,7 +9,8 @@ create table track (
 
 create table car (
 
-  id serial primary key,
+  id bigserial primary key,
+  track_id bigint not null references  track,
   code text not null,
   transmission text not null,
   ai text not null,

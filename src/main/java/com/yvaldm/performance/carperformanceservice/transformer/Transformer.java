@@ -24,7 +24,7 @@ public class Transformer {
         Value value = toValueEntity(valueRequest);
 
         return new Car(carRequestResponse.getId(),
-                       carRequestResponse.getCode(),
+                       carRequestResponse.getTrackId(), carRequestResponse.getCode(),
                        carRequestResponse.getTransmission(),
                        carRequestResponse.getAi(),
                        value);
@@ -58,7 +58,7 @@ public class Transformer {
     }
 
     private static CarRequestResponse toCarResponse(Car car) {
-        return new CarRequestResponse(car.getId(), car.getCode(), car.getTransmission(),
+        return new CarRequestResponse(car.getId(), car.getTrackId(), car.getCode(), car.getTransmission(),
                                       car.getAi(), toValueResponse(car.getMaxSpeed()));
     }
 }
