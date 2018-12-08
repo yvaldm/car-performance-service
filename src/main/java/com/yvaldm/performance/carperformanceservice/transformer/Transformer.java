@@ -7,23 +7,13 @@ import com.yvaldm.performance.carperformanceservice.entity.Car;
 import com.yvaldm.performance.carperformanceservice.entity.TrackMeasurement;
 import com.yvaldm.performance.carperformanceservice.entity.Value;
 
-import java.util.List;
-
-import static java.util.stream.Collectors.toList;
-
 public class Transformer {
 
-    public static List<TrackMeasurement> toTrackEntities(List<TracksRequestResponse> tracks) {
-        return tracks.stream().map(Transformer::toTrackEntity).collect(toList());
+    public static TrackMeasurement toTrackEntity(TracksRequestResponse request) {
+        return new TrackMeasurement(request.getId(), request.getName(), request.getDescription(), null);
     }
 
-    private static TrackMeasurement toTrackEntity(TracksRequestResponse request) {
-        List<CarRequestResponse> cars = request.getCars();
-        List<Car> carEntities = cars.stream().map(Transformer::toCarEntity).collect(toList());
-        return new TrackMeasurement(request.getId(), request.getName(), request.getDescription(), carEntities);
-    }
-
-    private static Car toCarEntity(CarRequestResponse carRequestResponse) {
+    public static Car toCarEntity(CarRequestResponse carRequestResponse) {
 
         MeasurementRequestResponse valueRequest = carRequestResponse.getMaxSpeed();
 
