@@ -5,14 +5,12 @@ Implement web application with following capabilities:
 2. in this form show data below
 3. if button is pressed on form, store the data from the form again as if it was new data
 
-
 Requirements:
 Embedded servlet container, any database, spring framework, maven/gradle
 
-
-
 Test data:
 
+```
 {
 	"tracks": [{
 		"id": 1,
@@ -43,3 +41,5 @@ Test data:
 		}]
 	}]
 }
+
+```

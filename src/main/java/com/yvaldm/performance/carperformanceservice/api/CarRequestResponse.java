@@ -10,7 +10,18 @@ public class CarRequestResponse {
     private ArtificialIntelligence ai;
 
     @JsonProperty("max-speed")
-    private MeasurementRequestResponse maxSpeed;
+    private ValueRequestResponse maxSpeed;
+
+    public CarRequestResponse() {
+    }
+
+    public CarRequestResponse(long id, String code, Transmission transmission, ArtificialIntelligence ai, ValueRequestResponse maxSpeed) {
+        this.id = id;
+        this.code = code;
+        this.transmission = transmission;
+        this.ai = ai;
+        this.maxSpeed = maxSpeed;
+    }
 
     public long getId() {
         return id;
@@ -28,7 +39,7 @@ public class CarRequestResponse {
         return ai;
     }
 
-    public MeasurementRequestResponse getMaxSpeed() {
+    public ValueRequestResponse getMaxSpeed() {
         return maxSpeed;
     }
 }

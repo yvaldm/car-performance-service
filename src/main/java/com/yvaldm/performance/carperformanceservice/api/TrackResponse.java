@@ -2,13 +2,26 @@ package com.yvaldm.performance.carperformanceservice.api;
 
 import java.util.List;
 
-public class TracksRequestResponse {
+/**
+ * Track request/response
+ *
+ * @author valeryyakovlev
+ */
+public class TrackResponse {
 
     private long id;
     private String name;
     private String description;
-    private MeasurementRequestResponse length;
+    private ValueRequestResponse length;
     private List<CarRequestResponse> cars;
+
+    public TrackResponse(long id, String name, String description, ValueRequestResponse length, List<CarRequestResponse> cars) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.length = length;
+        this.cars = cars;
+    }
 
     public long getId() {
         return id;
@@ -22,7 +35,7 @@ public class TracksRequestResponse {
         return description;
     }
 
-    public MeasurementRequestResponse getLength() {
+    public ValueRequestResponse getLength() {
         return length;
     }
 

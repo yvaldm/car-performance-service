@@ -40,7 +40,5 @@ public class TrackControllerIT {
                                              "}")
                             .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk());
-
     }
-
 }
