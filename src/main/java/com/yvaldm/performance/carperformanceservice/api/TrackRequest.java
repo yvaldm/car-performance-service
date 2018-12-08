@@ -1,5 +1,7 @@
 package com.yvaldm.performance.carperformanceservice.api;
 
+import java.math.BigDecimal;
+
 /**
  * Track request/response
  *
@@ -10,7 +12,8 @@ public class TrackRequest {
     private long id;
     private String name;
     private String description;
-    private ValueRequestResponse length;
+    private BigDecimal length;
+    private String unit;
 
     public long getId() {
         return id;
@@ -24,8 +27,11 @@ public class TrackRequest {
         return description;
     }
 
-    public ValueRequestResponse getLength() {
+    public BigDecimal getLength() {
         return length;
     }
 
+    public String getUnit() {
+        return unit;
+    }
 }

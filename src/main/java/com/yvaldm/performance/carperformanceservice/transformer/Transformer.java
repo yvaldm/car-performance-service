@@ -15,7 +15,7 @@ import static java.util.stream.Collectors.toList;
 public class Transformer {
 
     public static Track toTrackEntity(TrackRequest request) {
-        return new Track(request.getId(), request.getName(), request.getDescription(), toValueEntity(request.getLength()));
+        return new Track(request.getId(), request.getName(), request.getDescription(), new Value(request.getLength(), request.getUnit()));
     }
 
     public static Car toCarEntity(CarRequestResponse carRequestResponse) {
