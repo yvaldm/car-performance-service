@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 /**
  * Value entity
- * Value can have meanurement unit
+ * Value can have measurement unit
  *
  * @author valeryyakovlev
  */
