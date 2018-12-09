@@ -13,6 +13,8 @@ import java.util.Map;
 import static java.util.stream.Collectors.groupingBy;
 
 /**
+ * Tracks service
+ *
  * @author valeryyakovlev
  */
 public class TrackService {
@@ -25,10 +27,24 @@ public class TrackService {
         this.carsDao = carsDao;
     }
 
+    /**
+     * Create track entity
+     *
+     * @param name        track name
+     * @param description track description
+     * @param length      length of the track
+     * @param unit        measurement unit for length
+     * @return identifier of newly created track
+     */
     public long create(String name, String description, BigDecimal length, String unit) {
         return tracksDao.insert(name, description, length, unit);
     }
 
+    /**
+     * Find all available tracks with cars result assiociated with the track
+     *
+     * @return list of tracks
+     */
     public List<Track> find() {
         List<Track> tracks = tracksDao.find();
         Map<Long, List<Car>> carsMap = carsDao.find().stream().collect(groupingBy(Car::getTrackId));

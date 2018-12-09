@@ -1,5 +1,10 @@
 package com.yvaldm.performance.carperformanceservice.api;
 
+/**
+ * Request/response for car entity
+ *
+ * @author valeryyakovlev
+ */
 public class CarRequestResponse {
 
     private long id;

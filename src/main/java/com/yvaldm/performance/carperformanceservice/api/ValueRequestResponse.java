@@ -2,6 +2,11 @@ package com.yvaldm.performance.carperformanceservice.api;
 
 import java.math.BigDecimal;
 
+/**
+ * Class holding value with measurement unit
+ *
+ * @author valeryyakovlev
+ */
 public class ValueRequestResponse {
 
     private String unit;

@@ -4,6 +4,8 @@ import com.yvaldm.performance.carperformanceservice.dao.CarsDao;
 import com.yvaldm.performance.carperformanceservice.entity.Car;
 
 /**
+ * Cars Service
+ *
  * @author valeryyakovlev
  */
 public class CarService {
@@ -15,6 +17,7 @@ public class CarService {
     }
 
     public void create(Car car) {
-        carsDao.insert(car);
+        carsDao.insert(car.getCode(), car.getTrackId(),
+                       car.getTransmission(), car.getAi(), car.getMaxSpeed().getValue(), car.getMaxSpeed().getUnit());
     }
 }

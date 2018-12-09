@@ -1,7 +1,7 @@
 package com.yvaldm.performance.carperformanceservice.api;
 
 /**
- * Track request/response
+ * Track request
  *
  * @author valeryyakovlev
  */

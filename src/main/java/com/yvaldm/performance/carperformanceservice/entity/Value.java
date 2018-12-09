@@ -3,7 +3,8 @@ package com.yvaldm.performance.carperformanceservice.entity;
 import java.math.BigDecimal;
 
 /**
- * Class representing some value with some measurement unit
+ * Value entity
+ * Value can have meanurement unit
  *
  * @author valeryyakovlev
  */

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * Data access object for track entity
+ * Data Access Object for Track entity
  *
  * @author valeryyakovlev
  */

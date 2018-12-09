@@ -12,6 +12,11 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+/**
+ * Static utility class for transforming from request to entity and vice versa -- from entity to response
+ *
+ * @author valeryyakovlev
+ */
 public class Transformer {
 
     public static Track toTrackEntity(TrackRequest request) {
@@ -40,12 +45,8 @@ public class Transformer {
     }
 
     private static TrackResponse toTrackResponse(Track track) {
-
-        TrackResponse trackResponse = new TrackResponse(
-                track.getId(), track.getName(), track.getDescription(), track.getLength().getValue(),
-                track.getLength().getUnit(), toCarResponses(track.getCars()));
-
-        return trackResponse;
+        ValueRequestResponse length = new ValueRequestResponse(track.getLength().getUnit(), track.getLength().getValue());
+        return new TrackResponse(track.getId(), track.getName(), track.getDescription(), length, toCarResponses(track.getCars()));
     }
 
     private static ValueRequestResponse toValueResponse(Value length) {

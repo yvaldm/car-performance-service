@@ -7,6 +7,11 @@ import com.yvaldm.performance.carperformanceservice.service.TrackService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Car performance application configuration
+ *
+ * @author valeryyakovlev
+ */
 @Configuration
 public class CarPerformanceConfig {
 

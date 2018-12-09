@@ -3,6 +3,11 @@ package com.yvaldm.performance.carperformanceservice.entity;
 import com.yvaldm.performance.carperformanceservice.api.ArtificialIntelligence;
 import com.yvaldm.performance.carperformanceservice.api.Transmission;
 
+/**
+ * Car entity
+ *
+ * @author valeryyakovlev
+ */
 public class Car {
 
     private long id;

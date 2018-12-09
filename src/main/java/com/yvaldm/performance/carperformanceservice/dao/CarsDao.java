@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
+ * Data Access Object for Cars
+ *
  * @author valeryyakovlev
  */
 public class CarsDao {
@@ -29,15 +31,16 @@ public class CarsDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public long insert(Car car) {
+    public long insert(String code, long trackId, Transmission transmission, ArtificialIntelligence ai,
+                       BigDecimal value, String unit) {
 
         SqlParameterSource param = new MapSqlParameterSource()
-                .addValue("code", car.getCode())
-                .addValue("track_id", car.getTrackId())
-                .addValue("transmission", car.getTransmission().toString())
-                .addValue("ai", car.getCode())
-                .addValue("value", car.getMaxSpeed().getValue())
-                .addValue("unit", car.getMaxSpeed().getUnit());
+                .addValue("code", code)
+                .addValue("track_id", trackId)
+                .addValue("transmission", transmission.toString())
+                .addValue("ai", ai.toString())
+                .addValue("value", value)
+                .addValue("unit", unit);
 
         return jdbcTemplate.queryForObject(INSERT, param, long.class);
     }
