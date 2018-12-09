@@ -44,7 +44,7 @@ public class CarControllerIT {
                                              "   \"code\": \"rdb1\", " +
                                              "   \"transmission\": \"automatic\", " +
                                              "   \"ai\": \"enabled\", " +
-                                             "   \"max-speed\": { " +
+                                             "   \"maxSpeed\": { " +
                                              "    \"unit\": \"mps\", " +
                                              "    \"value\": 110.12121212 " +
                                              "   } }")

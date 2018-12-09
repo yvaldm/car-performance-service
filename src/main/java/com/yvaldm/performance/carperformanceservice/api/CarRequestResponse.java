@@ -1,7 +1,5 @@
 package com.yvaldm.performance.carperformanceservice.api;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class CarRequestResponse {
 
     private long id;
@@ -9,8 +7,6 @@ public class CarRequestResponse {
     private String code;
     private Transmission transmission;
     private ArtificialIntelligence ai;
-
-    @JsonProperty("max-speed")
     private ValueRequestResponse maxSpeed;
 
     public CarRequestResponse() {
