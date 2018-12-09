@@ -1,3 +1,7 @@
+Car Performance Service
+======================
+
+# Initial task
 
 Implement web application with following capabilities:
 
@@ -5,10 +9,26 @@ Implement web application with following capabilities:
 2. in this form show data below
 3. if button is pressed on form, store the data from the form again as if it was new data
 
-Requirements:
+# Requirements
+
 Embedded servlet container, any database, spring framework, maven/gradle
 
-Test data:
+# Used technologies
+
+Backend:
+
+1. Spring Boot 2.1.0
+2. Postgres
+3. Rest/Json controllers
+4. Flywaydb
+5. Maven
+6. Embedded tomcat
+
+Frontend:
+
+1. Angular/TypeScript 7.0.6
+
+# Test data 
 
 ```
 {
