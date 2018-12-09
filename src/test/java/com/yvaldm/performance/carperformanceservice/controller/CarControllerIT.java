@@ -45,8 +45,8 @@ public class CarControllerIT {
                                              "   \"transmission\": \"automatic\", " +
                                              "   \"ai\": \"enabled\", " +
                                              "   \"maxSpeed\": { " +
-                                             "    \"unit\": \"mps\", " +
-                                             "    \"value\": 110.12121212 " +
+                                             "    \"value\": 110.12121212, " +
+                                             "    \"unit\": \"mps\" " +
                                              "   } }")
                             .contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andExpect(status().isOk());

@@ -49,8 +49,8 @@ public class TrackControllerIT {
                                              "  \"name\": \"Millbrook\", " +
                                              "  \"description\": \"Millbrook city course race track\", " +
                                              "  \"length\": { " +
-                                             "   \"unit\": \"km\", " +
-                                             "   \"value\": 7.4 " +
+                                             "   \"value\": 7.4, " +
+                                             "   \"unit\": \"km\" " +
                                              "  }" +
                                              "}")
                             .contentType(MediaType.APPLICATION_JSON_UTF8))
@@ -65,8 +65,8 @@ public class TrackControllerIT {
                             .content("{ \"name\": \"track1\", " +
                                              "  \"description\": \"descr1\", " +
                                              "  \"length\": { " +
-                                             "   \"unit\": \"km\", " +
-                                             "   \"value\": 222.333 " +
+                                             "   \"value\": 222.333, " +
+                                             "   \"unit\": \"km\" " +
                                              "  }" +
                                              "}")
                             .contentType(MediaType.APPLICATION_JSON_UTF8))
@@ -76,8 +76,8 @@ public class TrackControllerIT {
                             .content("{ \"name\": \"track2\", " +
                                              "  \"description\": \"descr2\", " +
                                              "  \"length\": { " +
-                                             "   \"unit\": \"km\", " +
-                                             "   \"value\": 443.123 " +
+                                             "   \"value\": 443.123, " +
+                                             "   \"unit\": \"km\"" +
                                              "  }" +
                                              "}")
                             .contentType(MediaType.APPLICATION_JSON_UTF8))

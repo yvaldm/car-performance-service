@@ -45,12 +45,12 @@ public class Transformer {
     }
 
     private static TrackResponse toTrackResponse(Track track) {
-        ValueRequestResponse length = new ValueRequestResponse(track.getLength().getUnit(), track.getLength().getValue());
+        ValueRequestResponse length = new ValueRequestResponse(track.getLength().getValue(), track.getLength().getUnit());
         return new TrackResponse(track.getId(), track.getName(), track.getDescription(), length, toCarResponses(track.getCars()));
     }
 
     private static ValueRequestResponse toValueResponse(Value length) {
-        return new ValueRequestResponse(length.getUnit(), length.getValue());
+        return new ValueRequestResponse(length.getValue(), length.getUnit());
     }
 
     private static List<CarRequestResponse> toCarResponses(List<Car> cars) {

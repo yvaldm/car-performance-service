@@ -9,15 +9,15 @@ import java.math.BigDecimal;
  */
 public class ValueRequestResponse {
 
-    private String unit;
     private BigDecimal value;
+    private String unit;
 
     public ValueRequestResponse() {
     }
 
-    public ValueRequestResponse(String unit, BigDecimal value) {
-        this.unit = unit;
+    public ValueRequestResponse(BigDecimal value, String unit) {
         this.value = value;
+        this.unit = unit;
     }
 
     public String getUnit() {
